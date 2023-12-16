@@ -1,5 +1,8 @@
 import { fetchMoonInfo } from "@/app/services/Moon";
-import { convertAge, getLunarPhaseDescription } from "@/utils/astronomyUtils";
+import {
+  convertAge,
+  getLunarPhaseDescription,
+} from "@/app/libs/astronomyUtils";
 import Link from "next/link";
 export async function MoonPhase() {
   const moon = await fetchMoonInfo();

@@ -33,7 +33,7 @@ a {
 }
 
 .light {
-  --bg: white;
+  --bg: #fafafa;
   --textColor: black;
   --softBg: #f0f0f0;
   --softTextColor: #626262;
@@ -49,6 +49,7 @@ a {
   max-width: 1536px;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 80px;
   /* padding-left: 20px;
   padding-right: 20px; */
   min-height: calc(100vh - 80px);
@@ -67,8 +68,8 @@ a {
 @media screen and (max-width: 1024px) {
   .wrapper {
     max-width: 768px;
-    padding-left: 40px;
-    padding-right: 40px;
+    /* padding-left: 40px;
+    padding-right: 40px; */
   }
 }
 @media screen and (max-width: 768px) {
@@ -88,4 +89,17 @@ a {
 
 .quill > .ql-container > .ql-editor.ql-blank::before{
   color: #b3b3b1;
+}
+
+.pbr{
+  border: 1px solid red;
+}
+
+
+
+.test-page{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+
 }

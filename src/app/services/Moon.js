@@ -2,7 +2,6 @@ export async function fetchMoonInfo(
   dateTimeValue = new Date().toISOString().slice(0, 16)
 ) {
   const date = dateTimeValue;
-  console.log(date);
   const API_URL = "https://svs.gsfc.nasa.gov/api/dialamoon";
 
   try {
