@@ -2,6 +2,7 @@ import { Select } from "@/app/ui/eclipses/select";
 import { solarEclipseTypesOptions } from "../libs/constant";
 import { fetchSolarEclipses } from "../libs/data";
 import { Card } from "@/app/ui/eclipses/solar/card";
+import Pagination from "../ui/Pagination";
 export const metadata = {
   title: "Eclipses Solares | DINACE",
   description: "",
@@ -26,6 +27,7 @@ export default function page({ searchParams }) {
             <Card key={eclipse.seq_num} eclipse={eclipse} />
           ))}
         </div>
+        <Pagination totalPages={totalPages} />
       </section>
     </div>
   );
