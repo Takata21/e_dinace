@@ -9,7 +9,7 @@ export default function Navbar() {
     setMenuVisible((prev) => !prev);
   };
   return (
-    <header className="w-full h-20 xl:p-3  border-gray-200 fixed left-0 right-0 top-0  z-[999] bg-inherit dark:bg-[#0f172a] bg-white">
+    <header className="t-navbar w-full  xl:p-3  border-gray-200 fixed left-0 right-0 top-0  z-[999] bg-inherit  bg-white">
       <div className="items-center hidden xl:flex">
         <div className="flex items-center justify-between flex-1 w-full">
           <Link href="/" className="flex items-center">
@@ -32,7 +32,7 @@ export default function Navbar() {
             <ThemeToggle />
           </div>
         </div>
-        <nav className="menu flex-[2] justify-end dark:bg-gray-900 dark:text-white ">
+        <nav className="menu flex-[2] justify-end  dark:text-white ">
           <ul className="justify-end hidden h-full gap-5 p-4 text-center xl:flex">
             <li>
               <a
@@ -63,7 +63,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link
-                href="/galaxies"
+                href="/galaxias"
                 className="block text-[#0c163b] hover:text-[#0000006b] font-bold text-sm links-transitions dark:hover:text-[#fafafa93] dark:text-white"
               >
                 Galaxias
@@ -79,7 +79,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link
-                href="/lunar-eclipses"
+                href="/eclipses-lunares"
                 className="block text-[#0c163b] hover:text-[#0000006b] font-bold text-sm links-transitions dark:hover:text-[#fafafa93] dark:text-white"
               >
                 Eclipses Lunares
@@ -87,7 +87,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link
-                href="/solar-eclipses"
+                href="/eclipses-solares"
                 className="block text-[#0c163b] hover:text-[#0000006b] font-bold text-sm links-transitions dark:hover:text-[#fafafa93] dark:text-white"
               >
                 Eclipses Solares
@@ -162,7 +162,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link
-                href="/galaxies"
+                href="/galaxias"
                 className="flex py-[10px] px-[8px] text-[#0c163b] hover:text-[#0000006b] font-bold text-sm links-transitions dark:hover:text-[#fafafa93] dark:text-white"
               >
                 Galaxias
@@ -178,7 +178,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link
-                href="/lunar-eclipses"
+                href="/eclipses-lunares"
                 className="flex py-[10px] px-[8px] text-[#0c163b] hover:text-[#0000006b] font-bold text-sm links-transitions dark:hover:text-[#fafafa93] dark:text-white"
               >
                 Eclipses Lunares
@@ -186,7 +186,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link
-                href="/solar-eclipses"
+                href="/eclipses-solares"
                 className="flex py-[10px] px-[8px] text-[#0c163b] hover:text-[#0000006b] font-bold text-sm links-transitions dark:hover:text-[#fafafa93] dark:text-white"
               >
                 Eclipses Solares

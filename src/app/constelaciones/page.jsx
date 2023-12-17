@@ -3,6 +3,10 @@ import { Bellefair } from "next/font/google";
 import { fetchConstellations } from "../libs/data";
 import Pagination from "../ui/Pagination";
 import { Search } from "../ui/Search";
+export const metadata = {
+  title: "Constelaciones | DINACE",
+  description: "",
+};
 const bellefair = Bellefair({
   weight: ["400"],
   subsets: ["latin"],
@@ -23,7 +27,7 @@ export default function constelaciones({ searchParams }) {
         <Search placeholder="Introduce el nombre de la constelación..." />
       </section>
       <div
-        className={`${bellefair.className} test-page font-Bellefair w-full gap-5   focus-visible:outline-none focus-visible:border-none`}
+        className={`${bellefair.className} gallery font-Bellefair w-full gap-5   focus-visible:outline-none focus-visible:border-none`}
       >
         {constellations.map((constellation) => (
           <Card key={constellation.id} constellation={constellation} />

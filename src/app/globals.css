@@ -27,6 +27,7 @@ a {
 
 .dark {
   --bg: #0f172a;
+  --bg-blur: rgba(15, 23, 42, 0.8);
   --textColor: #ddd;
   --softBg: #1f273a;
   --softTextColor: #a6a6a6;
@@ -34,6 +35,7 @@ a {
 
 .light {
   --bg: #fafafa;
+  --bg-blur: rgba(250, 250, 250, 0.8);
   --textColor: black;
   --softBg: #f0f0f0;
   --softTextColor: #626262;
@@ -49,7 +51,7 @@ a {
   max-width: 1536px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 80px;
+  padding-top: 96px;
   /* padding-left: 20px;
   padding-right: 20px; */
   min-height: calc(100vh - 80px);
@@ -83,23 +85,34 @@ a {
   }
 }
 
-.ql-container{
+.ql-container {
   font-size: 28px !important;
 }
 
-.quill > .ql-container > .ql-editor.ql-blank::before{
+.quill > .ql-container > .ql-editor.ql-blank::before {
   color: #b3b3b1;
 }
 
-.pbr{
+.pbr {
   border: 1px solid red;
 }
 
-
-
-.test-page{
+.gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 20px;
+}
 
+.t-navbar {
+  background-color: var(--bg);
+  animation: enhance-header linear both;
+  animation-timeline: scroll(root);
+  animation-range: 0 200px;
+}
+
+@keyframes enhance-header {
+  to {
+    background-color: var(--bg-blur);
+    backdrop-filter: blur(5px);
+  }
 }
