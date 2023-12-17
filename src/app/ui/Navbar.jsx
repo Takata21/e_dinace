@@ -71,7 +71,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link
-                href="/moon-phases"
+                href="/fases-lunares"
                 className="block text-[#0c163b] hover:text-[#0000006b] font-bold text-sm links-transitions dark:hover:text-[#fafafa93] dark:text-white"
               >
                 Fases de la Luna
@@ -170,7 +170,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link
-                href="/moon-phases"
+                href="/fases-lunares"
                 className="flex py-[10px] px-[8px] text-[#0c163b] hover:text-[#0000006b] font-bold text-sm links-transitions dark:hover:text-[#fafafa93] dark:text-white"
               >
                 Fases de la Luna

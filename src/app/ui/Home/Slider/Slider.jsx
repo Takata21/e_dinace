@@ -50,7 +50,7 @@ export const Slider = () => {
         <div
           className={`${styles.slide}  relative flex flex-col items-end justify-end h-full pl-5 text-left pb-9 xl:justify-center xl:items-start xl:gap-5`}
         >
-          <VideoBackground source="/videos/constelltions.webm" />
+          <VideoBackground source="/videos/constellations.webm" />
           <h3 className="text-[#375ba7] font-Space text-xl font-bold block uppercase text-left w-full tracking-[3px] xl:text-3xl z-10">
             Constelaciones
           </h3>
@@ -107,7 +107,7 @@ export const Slider = () => {
             Fases de la Luna
           </h3>
           <Link
-            href="/moon-phases"
+            href="/fases-lunares"
             className="z-10 w-full text-2xl font-semibold text-white text-gradient xl:text-5xl xl:w-[620px]"
           >
             EXPLORA LAS FASES OCULTAS DE LA LUNA

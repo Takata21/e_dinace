@@ -6,7 +6,10 @@ export function Card({ eclipse }) {
 
   return (
     <article className="relative flex justify-center p-6 transition-all duration-300 bg-white border border-gray-200 rounded-lg shadow xl:gap-5 dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700">
-      <Link href={`/solar-eclipses/${seq_num}`} className="flex flex-col gap-5">
+      <Link
+        href={`/eclipses-solares/${seq_num}`}
+        className="flex flex-col gap-5"
+      >
         <div className="">
           <img
             src={`/images/solarEclipses/${seq_num}.webp`}

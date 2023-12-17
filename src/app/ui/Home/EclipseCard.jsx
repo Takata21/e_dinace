@@ -44,7 +44,7 @@ export default function EclipseCard({ info }) {
       </div>
       <div className="absolute bottom-0 right-0 self-end text-white link-gradient">
         <Link
-          href="/moon-phases"
+          href="/fases-lunares"
           className="block px-6 py-3 font-semibold uppercase "
         >
           Ver Más

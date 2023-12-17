@@ -1,3 +1,5 @@
+import { lunarEclipseTypesOptions, solarEclipseTypesOptions } from "./constant";
+
 export function formatCoordinates(j2000Ra, j2000Dec) {
   // Conversión de Ascensión Recta
   const raHours = Math.floor(j2000Ra);
@@ -536,4 +538,12 @@ export function getNextEclipse(type) {
 
   // Devolver el primer eclipse de la lista filtrada (el próximo eclipse)
   return filteredEclipses;
+}
+
+export function formatLunarEclipseType({ type }) {
+  const foundOption = lunarEclipseTypesOptions.find(
+    (option) => option.value.toLowerCase() === type.toLowerCase()
+  );
+
+  return foundOption ? foundOption.text : "Invalid option";
 }

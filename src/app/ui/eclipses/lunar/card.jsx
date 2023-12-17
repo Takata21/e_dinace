@@ -9,7 +9,7 @@ export function Card({ eclipse }) {
   return (
     <article className="relative flex justify-center duration-300 bg-white border border-gray-200 rounded-lg shadow xl:gap-5 dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 transition-bg">
       <Link
-        href={`/lunar-eclipses/${seq_num}134`}
+        href={`/eclipses-lunares/${seq_num}134`}
         className="flex flex-col gap-5 p-6"
       >
         <div className="">

@@ -92,3 +92,17 @@ export function fetchSolarEclipses(query, page = 1) {
   );
   return { eclipses, totalPages, totalEclipses };
 }
+
+export function getLunarEclipseInformation({ id }) {
+  const eclipseInformation = lunarEclipses.find(
+    (eclipse) => eclipse.seq_num === id.slice(0, -3)
+  );
+  return eclipseInformation;
+}
+
+export function getSolarEclipseInformation({ id }) {
+  const eclipseInformation = solarEclipses.find(
+    (eclipse) => eclipse.seq_num === id
+  );
+  return eclipseInformation;
+}
