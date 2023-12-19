@@ -148,6 +148,7 @@ export default function Navbar() {
               <Link
                 href="/efemerides"
                 className="flex py-[10px] px-[8px] text-[#0c163b] hover:text-[#0000006b] font-bold text-sm links-transitions dark:hover:text-[#fafafa93] dark:text-white"
+                onClick={() => handleMenu()}
               >
                 Efemérides
               </Link>
@@ -156,6 +157,7 @@ export default function Navbar() {
               <Link
                 href="/constelaciones"
                 className="flex py-[10px] px-[8px] text-[#0c163b] hover:text-[#0000006b] font-bold text-sm links-transitions dark:hover:text-[#fafafa93] dark:text-white"
+                onClick={() => handleMenu()}
               >
                 Constelaciones
               </Link>
@@ -164,6 +166,7 @@ export default function Navbar() {
               <Link
                 href="/galaxias"
                 className="flex py-[10px] px-[8px] text-[#0c163b] hover:text-[#0000006b] font-bold text-sm links-transitions dark:hover:text-[#fafafa93] dark:text-white"
+                onClick={() => handleMenu()}
               >
                 Galaxias
               </Link>
@@ -172,6 +175,7 @@ export default function Navbar() {
               <Link
                 href="/fases-lunares"
                 className="flex py-[10px] px-[8px] text-[#0c163b] hover:text-[#0000006b] font-bold text-sm links-transitions dark:hover:text-[#fafafa93] dark:text-white"
+                onClick={() => handleMenu()}
               >
                 Fases de la Luna
               </Link>
@@ -180,6 +184,7 @@ export default function Navbar() {
               <Link
                 href="/eclipses-lunares"
                 className="flex py-[10px] px-[8px] text-[#0c163b] hover:text-[#0000006b] font-bold text-sm links-transitions dark:hover:text-[#fafafa93] dark:text-white"
+                onClick={() => handleMenu()}
               >
                 Eclipses Lunares
               </Link>
@@ -188,6 +193,7 @@ export default function Navbar() {
               <Link
                 href="/eclipses-solares"
                 className="flex py-[10px] px-[8px] text-[#0c163b] hover:text-[#0000006b] font-bold text-sm links-transitions dark:hover:text-[#fafafa93] dark:text-white"
+                onClick={() => handleMenu()}
               >
                 Eclipses Solares
               </Link>

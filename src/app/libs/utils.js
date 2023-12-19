@@ -33,3 +33,9 @@ export const generatePagination = (currentPage, totalPages) => {
     totalPages,
   ];
 };
+
+export function getUTCHour(query) {
+  const date = new Date(query);
+  const hourUTC = date.toUTCString().slice(17, 22);
+  return hourUTC;
+}

@@ -1,3 +1,4 @@
+export const EARTH_DIAMETER = 12742;
 // Tipos generales de eclipses
 export const SOLAR_ECLIPSE = "Solar Eclipses";
 export const LUNAR_ECLIPSE = "Lunar Eclipses";

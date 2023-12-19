@@ -2,7 +2,7 @@ import constellations from "@/app/libs/constellations.json";
 import galaxies from "@/app/libs/galaxies.json";
 import lunarEclipses from "@/app/libs/lunarEclipses.json";
 import solarEclipses from "@/app/libs/solarEclipses.json";
-
+import { getUTCHour } from "./utils";
 export function fetchConstellations(query, page = 1) {
   const ITEM_PER_PAGE = 9;
 
@@ -105,4 +105,22 @@ export function getSolarEclipseInformation({ id }) {
     (eclipse) => eclipse.seq_num === id
   );
   return eclipseInformation;
+}
+
+export async function fetchMoonPhase({
+  dateTimeValue = new Date().toISOString().slice(0, 16),
+}) {
+  const date = dateTimeValue.slice(0, 11);
+  const hour = getUTCHour(dateTimeValue);
+  const API_URL = "https://svs.gsfc.nasa.gov/api/dialamoon";
+  try {
+    const response = await fetch(`${API_URL}/${date}${hour}`);
+    if (!response.ok) {
+      throw new Error("Failed to fetch data.");
+    }
+    return await response.json();
+  } catch (error) {
+    console.log("Error", error);
+    throw new Error("Failed to fetch data.");
+  }
 }
