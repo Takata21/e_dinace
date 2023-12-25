@@ -2,6 +2,7 @@ import constellations from "@/app/libs/constellations.json";
 import galaxies from "@/app/libs/galaxies.json";
 import lunarEclipses from "@/app/libs/lunarEclipses.json";
 import solarEclipses from "@/app/libs/solarEclipses.json";
+import bodyList from "@/app/libs/bodyList.json";
 import { getUTCHour } from "./utils";
 export function fetchConstellations(query, page = 1) {
   const ITEM_PER_PAGE = 9;
@@ -123,4 +124,32 @@ export async function fetchMoonPhase({
     console.log("Error", error);
     throw new Error("Failed to fetch data.");
   }
+}
+
+export function getBodies({ selectList }) {
+  const draft = bodyList.filter((item) => {
+    return item.label.toLowerCase() === selectList.toLowerCase();
+  });
+  const filterList = draft[0].list;
+  return { filterList };
+}
+
+export async function fetchEphemris(horizon) {
+  const { COMMAND, LATITUDE, LONGITUDE, START_TIME, STOP_TIME } = horizon;
+  const URL = "https://ssd.jpl.nasa.gov/api/horizons.api";
+  return { test: "true" };
+  // try {
+  //   const response = fetch(
+  //     `${URL}?format=json&COMMAND='${COMMAND}'&OBJ_DATA='YES'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='coord@399'&SITE_COORD='${LONGITUDE},${LATITUDE},0'&START_TIME='${START_TIME}'&STOP_TIME='${STOP_TIME}'&CSV_FORMAT='YES'&STEP_SIZE='1%20d'&QUANTITIES='1,9,20,23,24,29'&COORD_TYPE=GEODETIC`
+  //   );
+
+  //   if (!response.ok) {
+  //     throw new Error("Failed to fetch data.");
+  //   }
+  //   const data = await response.json();
+  //   return data;
+  // } catch (error) {
+  //   console.log("Error", error);
+  //   throw new Error("Failed to fetch data.");
+  // }
 }

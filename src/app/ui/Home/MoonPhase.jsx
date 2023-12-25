@@ -1,11 +1,11 @@
-import { fetchMoonInfo } from "@/app/services/Moon";
+import { fetchMoonPhases } from "@/app/services/Moon";
 import {
   convertAge,
   getLunarPhaseDescription,
 } from "@/app/libs/astronomyUtils";
 import Link from "next/link";
 export async function MoonPhase() {
-  const moon = await fetchMoonInfo();
+  const moon = await fetchMoonPhases();
   const phase = getLunarPhaseDescription(moon.age);
   const { days, hours, minutes } = convertAge(moon.age);
 

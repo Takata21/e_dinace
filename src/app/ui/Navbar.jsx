@@ -98,12 +98,7 @@ export default function Navbar() {
       </div>
       <nav className="mobileMenu xl:hidden w-full  border-gray-200 bg-inherit relative top-0 dark:bg-[#0f172a] bg-white px-3 flex items-center justify-between py-3">
         <div className="flex items-center">
-          <Link
-            href="https://dinace.utp.ac.pa/"
-            className="flex items-center elative z-[999]"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <Link href="/" className="flex items-center elative z-[999]">
             <img
               src="images/dinace_logo.png"
               className="h-16"
