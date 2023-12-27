@@ -71,7 +71,7 @@ export default async function MoonPhases({ searchParams }) {
   // };
   const { days, hours, minutes } = convertAge(data?.age);
   return (
-    <div className="flex flex-col  w-full min-h-screen p-5 text-white bg-black xl:flex-row justify-between">
+    <div className="flex flex-col justify-between w-full min-h-screen p-5 text-white bg-black xl:flex-row">
       <section>
         <div className="rounded-md card">
           <h2>Hora (UTC):</h2>
@@ -79,7 +79,7 @@ export default async function MoonPhases({ searchParams }) {
           <div>
             <h2>Fase:</h2>
             <p className="text-2xl font-bold ">
-              {getLunarPhaseDescription(data?.age).es}
+              {getLunarPhaseDescription(data?.phase).es}
             </p>
             <pre></pre>
             <p>{`${data?.phase} % (${days}d ${hours}h ${minutes}m)`}</p>
@@ -96,7 +96,7 @@ export default async function MoonPhases({ searchParams }) {
 
       <section className="flex flex-col gap-5">
         <div
-          className="flex items-center p-1 mb-4 text-sm rounded text-blue bg-gray-800 text-blue-400"
+          className="flex items-center p-1 mb-4 text-sm text-blue-400 bg-gray-800 rounded text-blue"
           role="alert"
         >
           <svg

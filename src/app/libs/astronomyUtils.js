@@ -118,7 +118,7 @@ export function getLunarPhaseDescription(phasePercentage) {
     },
     {
       range: [0.5, 0.75],
-      description: { es: "Cuarto Menguante", en: "Last Quarter" },
+      description: { es: "Cuarto Menguante", en: "Third Quarter" },
     },
     {
       range: [0.25, 0.5],
