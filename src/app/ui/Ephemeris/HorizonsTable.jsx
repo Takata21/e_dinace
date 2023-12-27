@@ -14,7 +14,6 @@ import { csvToObjectArray } from "@/app/libs/ephemerisUtils";
 import Link from "next/link";
 
 export function HorizonsTable({ info }) {
-  console.log("------------>", info);
   const data = csvToObjectArray(info);
   return (
     <div>
@@ -26,6 +25,7 @@ export function HorizonsTable({ info }) {
             href="https://ssd.jpl.nasa.gov/horizons/app.html#/"
             target="_blank"
             rel="noreferrer"
+            className="underline"
           >
             Mas
           </a>
@@ -90,8 +90,10 @@ export function HorizonsTable({ info }) {
         </TableBody>
         <TableFooter>
           <TableRow>
-            <TableCell colSpan={2} className="bg-transparent ">
-              <Link href="/column-meaning">Más información</Link>
+            <TableCell colSpan={1} className="bg-transparent ">
+              <Link href="/column-meaning" className="underline">
+                Más información
+              </Link>
             </TableCell>
           </TableRow>
         </TableFooter>

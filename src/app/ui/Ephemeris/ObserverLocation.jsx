@@ -1,7 +1,7 @@
 "use client";
 import { Tooltip } from "react-tooltip";
 import { FaMapMarkerAlt } from "react-icons/fa";
-export function ObserverLocation({ handleChange }) {
+export function ObserverLocation({ handleChange, horizons }) {
   return (
     <>
       <div className="flex items-center justify-between">
@@ -40,6 +40,7 @@ export function ObserverLocation({ handleChange }) {
             required
             pattern="/^-?([0-8]?[0-9]|90)(\.\d{1,6})?$/"
             onChange={(e) => handleChange(e)}
+            value={horizons.latitude}
           />
         </label>
       </div>
@@ -60,6 +61,7 @@ export function ObserverLocation({ handleChange }) {
             required
             pattern="/^-?((1[0-7]|[0-9]?[0-9])|180)(\.\d{1,6})?$/"
             onChange={(e) => handleChange(e)}
+            value={horizons.longitude}
           />
         </label>
       </div>

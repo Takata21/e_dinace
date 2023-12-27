@@ -8,11 +8,11 @@ import { useState } from "react";
 export default function Sidebar() {
   const { fetchEphemeris } = useEphemerisStore();
   const [horizons, setHorizons] = useState({
-    targetBody: "10",
-    latitude: "8.488207",
-    longitude: "-80.328734",
-    startTime: "2023-05-10",
-    stopTime: "2023-05-21",
+    targetBody: "499",
+    latitude: "",
+    longitude: "",
+    startTime: "",
+    stopTime: "",
   });
 
   const handleSubmit = async (e) => {
@@ -38,20 +38,26 @@ export default function Sidebar() {
   };
 
   return (
-    <aside className="absolute top-0 bottom-0 left-0 right-0 z-50 h-full max-h-screen overflow-hidden bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700 position xl:sticky">
-      <form className="px-5 py-3" onSubmit={handleSubmit}>
-        <div className="">
-          <TargetBody handleChange={onInputChange} />
-          <ObserverLocation handleChange={onInputChange} />
-        </div>
-        <TimeSpecification handleChange={onInputChange} />
-        <button
-          type="submit"
-          className="focus:outline-none text-white bg-[#0B602B] hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 my-5"
-        >
-          Generar Efemérides
-        </button>
-      </form>
-    </aside>
+    <div>
+      <aside></aside>
+      <aside className="top-0 bottom-0 left-0 right-0 z-50 hidden h-full max-h-screen overflow-hidden bg-white border-r border-gray-200 xl:block dark:bg-gray-800 dark:border-gray-700 position xl:sticky">
+        <form className="px-5 py-3" onSubmit={handleSubmit}>
+          <div className="">
+            <TargetBody handleChange={onInputChange} horizons={horizons} />
+            <ObserverLocation
+              handleChange={onInputChange}
+              horizons={horizons}
+            />
+          </div>
+          <TimeSpecification handleChange={onInputChange} horizons={horizons} />
+          <button
+            type="submit"
+            className="focus:outline-none text-white bg-[#0B602B] hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 my-5"
+          >
+            Generar Efemérides
+          </button>
+        </form>
+      </aside>
+    </div>
   );
 }
