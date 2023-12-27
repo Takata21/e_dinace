@@ -1,11 +1,7 @@
 "use client";
 import { getBodies } from "@/app/libs/data";
 import { useState } from "react";
-import { useSearchParams, usePathname, useRouter } from "next/navigation";
-export function TargetBody() {
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const { replace } = useRouter();
+export function TargetBody({ handleChange }) {
   const [bodyList, setBodyList] = useState([
     {
       jd_min: -1930633.5,
@@ -112,17 +108,6 @@ export function TargetBody() {
     setBodyList(filterList);
   };
 
-  const handleSelect = (COMMAND = "499") => {
-    const params = new URLSearchParams(searchParams);
-    if (COMMAND) {
-      params.set("COMMAND", COMMAND);
-    } else {
-      params.delete("COMMAND");
-    }
-
-    replace(`${pathname}?${params}`);
-  };
-
   return (
     <div className="">
       <label className="text-sm font-medium " htmlFor="majorBodies">
@@ -156,7 +141,7 @@ export function TargetBody() {
         className="block w-full p-2 mb-3 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         required
         name="targetBody"
-        onChange={(e) => handleSelect(e.target.value)}
+        onChange={(e) => handleChange(e)}
       >
         {bodyList?.map((body) => (
           <option key={body.id} value={body.id}>

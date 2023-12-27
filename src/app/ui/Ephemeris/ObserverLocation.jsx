@@ -1,45 +1,7 @@
 "use client";
 import { Tooltip } from "react-tooltip";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { useSearchParams, useRouter, usePathname } from "next/navigation";
-export function ObserverLocation() {
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const { replace } = useRouter();
-
-  const handleLat = (e) => {
-    const latParamName = "LATITUDE";
-    const latParamValue = e.target.value || "8.488212";
-    // Obtener los parámetros actuales
-    const params = new URLSearchParams(searchParams);
-
-    // Establecer el nuevo valor de latitud
-    if (latParamValue) {
-      params.set(latParamName, latParamValue);
-    } else {
-      params.delete(latParamName);
-    }
-
-    // Reemplazar la URL con los nuevos parámetros
-    replace(`${pathname}?${params}`);
-  };
-
-  const handleLong = (e) => {
-    const longParamName = "LONGITUDE";
-    const longParamValue = e.target.value || -80.328743;
-
-    // Obtener los parámetros actuales
-    const params = new URLSearchParams(searchParams);
-
-    // Establecer el nuevo valor de longitud
-    if (longParamValue) {
-      params.set(longParamName, longParamValue);
-    }
-
-    // Reemplazar la URL con los nuevos parámetros
-    replace(`${pathname}?${params.toString()}`);
-  };
-
+export function ObserverLocation({ handleChange }) {
   return (
     <>
       <div className="flex items-center justify-between">
@@ -77,8 +39,7 @@ export function ObserverLocation() {
             placeholder="40.7128"
             required
             pattern="/^-?([0-8]?[0-9]|90)(\.\d{1,6})?$/"
-            onChange={(e) => handleLat(e)}
-            defaultValue={searchParams.get("LATITUDE")?.toString()}
+            onChange={(e) => handleChange(e)}
           />
         </label>
       </div>
@@ -98,8 +59,7 @@ export function ObserverLocation() {
             placeholder="-74.0060"
             required
             pattern="/^-?((1[0-7]|[0-9]?[0-9])|180)(\.\d{1,6})?$/"
-            onChange={(e) => handleLong(e)}
-            defaultValue={searchParams.get("LONGITUDE")?.toString()}
+            onChange={(e) => handleChange(e)}
           />
         </label>
       </div>
