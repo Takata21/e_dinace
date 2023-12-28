@@ -18,17 +18,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ThemeContextProvider>
-      <ThemeProvider>
-        <body className={inter.className}>
-          <div className="t-container">
-            {/* <Link href="/not-existing-route">Not Found</Link> */}
-            <Navbar />
-            <main className="wrapper">{children}</main>
-            <Footer />
-          </div>
-        </body>
-      </ThemeProvider>
-    </ThemeContextProvider>
+    <html lang="en">
+      <body className={inter.className}>
+        <ThemeContextProvider>
+          <ThemeProvider>
+            <div className="t-container">
+              {/* <Link href="/not-existing-route">Not Found</Link> */}
+              <Navbar />
+              <main className="wrapper">{children}</main>
+              <Footer />
+            </div>
+          </ThemeProvider>
+        </ThemeContextProvider>
+      </body>
+    </html>
   );
 }
