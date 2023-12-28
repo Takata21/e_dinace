@@ -1,5 +1,6 @@
 "use client";
 import { menuLinks } from "@/app/libs/constant";
+import { SheetClose } from "@/components/ui/sheet";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 export default function NavItems() {
@@ -15,7 +16,9 @@ export default function NavItems() {
               isActive && "text-primary-500"
             } flex-center p-medium-16 whitespace-nowrap`}
           >
-            <Link href={link.route}>{link.label}</Link>
+            <SheetClose asChild>
+              <Link href={link.route}>{link.label}</Link>
+            </SheetClose>
           </li>
         );
       })}

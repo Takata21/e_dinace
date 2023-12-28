@@ -6,10 +6,8 @@ import { useEphemerisStore } from "@/app/store/EphemerisStore";
 import { RiAiGenerate } from "react-icons/ri";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 
@@ -69,12 +67,14 @@ export default function Sidebar() {
                 handleChange={onInputChange}
                 horizons={horizons}
               />
-              <button
-                type="submit"
-                className="focus:outline-none text-white bg-[#0B602B] hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 my-5"
-              >
-                Generar Efemérides
-              </button>
+              <SheetClose asChild>
+                <button
+                  type="submit"
+                  className="focus:outline-none text-white bg-[#0B602B] hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 my-5"
+                >
+                  Generar Efemérides
+                </button>
+              </SheetClose>
             </form>
           </SheetContent>
         </Sheet>
