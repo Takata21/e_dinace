@@ -11,23 +11,24 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Dirección Nacional de Ciencias Espaciales",
   description: "",
+  icons: {
+    icon: "/images/dinace_logo.png",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ThemeContextProvider>
-          <ThemeProvider>
-            <div className="t-container">
-              <Link href="/not-existing-route">Not Found</Link>
-              <Navbar />
-              <main className="wrapper">{children}</main>
-              <Footer />
-            </div>
-          </ThemeProvider>
-        </ThemeContextProvider>
-      </body>
-    </html>
+    <ThemeContextProvider>
+      <ThemeProvider>
+        <body className={inter.className}>
+          <div className="t-container">
+            {/* <Link href="/not-existing-route">Not Found</Link> */}
+            <Navbar />
+            <main className="wrapper">{children}</main>
+            <Footer />
+          </div>
+        </body>
+      </ThemeProvider>
+    </ThemeContextProvider>
   );
 }

@@ -1,3 +1,30 @@
+export const menuLinks = [
+  {
+    label: "Efemérides",
+    route: "/efemerides",
+  },
+  {
+    label: "Constelaciones",
+    route: "/constelaciones",
+  },
+  {
+    label: "Galaxias",
+    route: "/galaxias",
+  },
+  {
+    label: "Fases de la Luna",
+    route: "/fases-lunares",
+  },
+  {
+    label: "Eclipses Lunares",
+    route: "/eclipses-lunares",
+  },
+  {
+    label: "Eclipses Solares",
+    route: "/eclipses-solares",
+  },
+];
+
 export const EARTH_DIAMETER = 12742;
 // Tipos generales de eclipses
 export const SOLAR_ECLIPSE = "Solar Eclipses";

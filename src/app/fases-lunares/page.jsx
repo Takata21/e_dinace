@@ -69,6 +69,9 @@ export default async function MoonPhases({ searchParams }) {
   //   subearth_lat: -3.677,
   //   posangle: 21.894,
   // };
+
+  // * TODO: add north image
+
   const { days, hours, minutes } = convertAge(data?.age);
   return (
     <div className="flex flex-col justify-between w-full min-h-screen p-5 text-white bg-black xl:flex-row">

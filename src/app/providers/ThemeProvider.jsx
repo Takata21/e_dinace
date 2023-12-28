@@ -11,6 +11,11 @@ export default function ThemeProvider({ children }) {
   }, []);
 
   if (mounted) {
-    return <div className={theme}>{children}</div>;
+    return (
+      <html lang="en" className={theme}>
+        {children}
+      </html>
+    );
+    // <div className={theme}>{children}</div>;
   }
 }

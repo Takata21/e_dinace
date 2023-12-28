@@ -1,4 +1,9 @@
-import { FaFacebook, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa6";
+import {
+  FaFacebook,
+  FaXTwitter,
+  FaYoutube,
+  FaInstagram,
+} from "react-icons/fa6";
 import Link from "next/link";
 export const Footer = () => {
   const year = new Date().getFullYear();
@@ -27,7 +32,7 @@ export const Footer = () => {
             buzondesugerencias@utp.ac.pa
           </p>
           <Link href="/disclaimer" className="underline">
-            Términos de Uso{" "}
+            Términos de Uso
           </Link>
           <span className="hidden">Make by MTakata</span>
         </div>
@@ -45,7 +50,7 @@ export const Footer = () => {
           className="flex items-center text-black  justify-center w-8 h-8 bg-white rounded-full hover:bg-[#29166F] hover:text-white transition-bg duration-500 ease-in-out "
           aria-label="Ir al Twitter dinace"
         >
-          <FaTwitter />
+          <FaXTwitter />
         </a>
         <a
           href="https://www.youtube.com/user/UTPPanama"

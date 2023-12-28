@@ -1,16 +1,11 @@
 "use client";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle/ThemeToggle";
-import { MdMenu, MdClose } from "react-icons/md";
-import { useState } from "react";
+import MobileNav from "./MobileNav";
 export default function Navbar() {
-  const [menuVisible, setMenuVisible] = useState(false);
-  const handleMenu = () => {
-    setMenuVisible((prev) => !prev);
-  };
   return (
-    <header className="t-navbar w-full  xl:p-3  border-gray-200 fixed left-0 right-0 top-0  z-[999] bg-inherit  bg-white">
-      <div className="items-center hidden xl:flex">
+    <header className="t-navbar w-full xl:p-3 border-gray-200 sticky left-0 right-0 top-0 z-[1] md:z-[999] bg-inherit  bg-white">
+      <div className="items-center hidden xl:flex h-[60px]">
         <div className="flex items-center justify-between flex-1 w-full">
           <Link href="/" className="flex items-center">
             <img
@@ -96,12 +91,12 @@ export default function Navbar() {
           </ul>
         </nav>
       </div>
-      <nav className="mobileMenu xl:hidden w-full  border-gray-200 bg-inherit relative top-0 dark:bg-[#0f172a] bg-white px-3 flex items-center justify-between py-3">
+      <div className="h-[60px] flex justify-between items-center p-3 md:hidden">
         <div className="flex items-center">
-          <Link href="/" className="flex items-center elative z-[999]">
+          <Link href="/" className="flex items-center">
             <img
               src="images/dinace_logo.png"
-              className="h-16"
+              className="h-12 my-1 mr-1"
               alt="dinace Logo"
             />
           </Link>
@@ -115,87 +110,8 @@ export default function Navbar() {
             </h2>
           </div>
         </div>
-
-        <div className="menu flex-[2] justify-end dark:bg-gray-900 dark:text-white">
-          <div className="flex items-center justify-end gap-5 mobileTopRight relative z-[999]">
-            <ThemeToggle />
-            <button className="" onClick={() => handleMenu()}>
-              {menuVisible ? <MdClose size={40} /> : <MdMenu size={40} />}
-            </button>
-          </div>
-          <ul
-            className={`absolute  top-0 h-screen pt-[88px] ${
-              menuVisible ? "left-0" : "left-[999px]"
-            } right-0 bg-white gap-5 p-4  dark:bg-[#1f273a]`}
-          >
-            <li>
-              <a
-                className="flex py-[10px] px-[8px] text-[#0c163b] hover:text-[#0000006b] font-bold text-sm links-transitions dark:hover:text-[#fafafa93] dark:text-white"
-                href="https://dinace.utp.ac.pa/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                DINACE
-              </a>
-            </li>
-
-            <li>
-              <Link
-                href="/efemerides"
-                className="flex py-[10px] px-[8px] text-[#0c163b] hover:text-[#0000006b] font-bold text-sm links-transitions dark:hover:text-[#fafafa93] dark:text-white"
-                onClick={() => handleMenu()}
-              >
-                Efemérides
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/constelaciones"
-                className="flex py-[10px] px-[8px] text-[#0c163b] hover:text-[#0000006b] font-bold text-sm links-transitions dark:hover:text-[#fafafa93] dark:text-white"
-                onClick={() => handleMenu()}
-              >
-                Constelaciones
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/galaxias"
-                className="flex py-[10px] px-[8px] text-[#0c163b] hover:text-[#0000006b] font-bold text-sm links-transitions dark:hover:text-[#fafafa93] dark:text-white"
-                onClick={() => handleMenu()}
-              >
-                Galaxias
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/fases-lunares"
-                className="flex py-[10px] px-[8px] text-[#0c163b] hover:text-[#0000006b] font-bold text-sm links-transitions dark:hover:text-[#fafafa93] dark:text-white"
-                onClick={() => handleMenu()}
-              >
-                Fases de la Luna
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/eclipses-lunares"
-                className="flex py-[10px] px-[8px] text-[#0c163b] hover:text-[#0000006b] font-bold text-sm links-transitions dark:hover:text-[#fafafa93] dark:text-white"
-                onClick={() => handleMenu()}
-              >
-                Eclipses Lunares
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/eclipses-solares"
-                className="flex py-[10px] px-[8px] text-[#0c163b] hover:text-[#0000006b] font-bold text-sm links-transitions dark:hover:text-[#fafafa93] dark:text-white"
-                onClick={() => handleMenu()}
-              >
-                Eclipses Solares
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
+        <MobileNav />
+      </div>
     </header>
   );
 }
