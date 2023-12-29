@@ -5,7 +5,7 @@ import { EphemerisInfo } from "./EphemerisInfo";
 
 export function HorizonsContent() {
   const { ephemeris, loading } = useEphemerisStore();
-  console.log(ephemeris);
+  // console.log(ephemeris);
   return (
     <div>
       {loading ? (

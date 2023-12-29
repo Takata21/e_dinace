@@ -30,7 +30,7 @@ export default function Pagination({ totalPages }) {
 
         <div className="flex -space-x-px">
           {allPages.map((page, index) => {
-            console.log(page);
+            // console.log(page);
             let position;
 
             if (index === 0) position = "first";

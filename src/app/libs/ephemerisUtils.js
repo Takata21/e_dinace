@@ -1,6 +1,5 @@
 export function getPhysicalData(text) {
   if (text.length === 0) {
-    console.log("vacio");
     return;
   }
 
@@ -41,7 +40,7 @@ export function getEphemerisInfo(text) {
 
   // Split the text into lines
   const lines = dataString.split("\n");
-  console.log(lines);
+  // console.log(lines);
 
   // Create an array to store the values
   const valuesArray = [];
