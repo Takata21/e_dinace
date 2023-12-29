@@ -1,27 +1,13 @@
 "use client";
-import { Tooltip } from "react-tooltip";
-import { FaMapMarkerAlt } from "react-icons/fa";
-export function ObserverLocation({ handleChange, horizons }) {
+import { Map } from "./Map";
+export function ObserverLocation({ handleChange, horizons, handleMap }) {
   return (
     <>
       <div className="flex items-center justify-between">
         <h3 className="mb-3 text-sm font-medium">
           Especificar la Ubicación del Observador.
         </h3>
-
-        <a id="my-anchor-element">
-          <button type="button" onClick={() => console.log("hola")}>
-            <FaMapMarkerAlt
-              size={25}
-              color="#2c84cb"
-              className="hover:#007bff50"
-            />
-          </button>
-        </a>
-        <Tooltip
-          anchorSelect="#my-anchor-element"
-          content="Obtener Ubicación"
-        />
+        <Map handleMap={handleMap} horizons={horizons} />
       </div>
 
       <div className="mb-4">

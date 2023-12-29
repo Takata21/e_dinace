@@ -44,7 +44,13 @@ export default function Sidebar() {
       [name]: value,
     }));
   };
-
+  const handleMap = (latlng) => {
+    setHorizons((prev) => ({
+      ...prev,
+      latitude: latlng.lat.toFixed(4),
+      longitude: latlng.lng.toFixed(4),
+    }));
+  };
   return (
     <div>
       <aside className="md:hidden">
@@ -84,6 +90,7 @@ export default function Sidebar() {
             <ObserverLocation
               handleChange={onInputChange}
               horizons={horizons}
+              handleMap={handleMap}
             />
           </div>
           <TimeSpecification handleChange={onInputChange} horizons={horizons} />

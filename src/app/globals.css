@@ -217,3 +217,17 @@ a {
   background-size: cover;
   z-index: 1;
 }
+
+.my-anchor-element {
+  animation: subirBajar 2s linear infinite;
+}
+
+@keyframes subirBajar {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+}
