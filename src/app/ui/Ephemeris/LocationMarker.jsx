@@ -13,13 +13,13 @@ export default function LocationMarker({ handleMap, horizons }) {
   const [position, setPosition] = useState(null);
   const map = useMapEvents({
     click(e) {
-      console.log("Coordenadas al hacer clic:", e.latlng);
+      // console.log("Coordenadas al hacer clic:", e.latlng);
       setPosition(e);
       handleMap(e.latlng);
       setPosition(e.latlng);
     },
     locationfound(e) {
-      console.log("Ubicación encontrada:", e.latlng);
+      // console.log("Ubicación encontrada:", e.latlng);
       setPosition(e);
       handleMap(e.latlng);
       setPosition(e.latlng);
