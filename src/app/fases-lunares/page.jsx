@@ -10,67 +10,6 @@ import { fetchMoonPhase } from "../libs/data";
 export default async function MoonPhases({ searchParams }) {
   const query = searchParams?.query || new Date().toISOString().slice(0, 16);
   const data = await fetchMoonPhase({ dateTimeValue: query });
-  // const data = {
-  //   image: {
-  //     id: 568984,
-  //     url: "https://svs.gsfc.nasa.gov/vis/a000000/a005000/a005048/frames/730x730_1x1_30p/moon.8134.jpg",
-  //     filename: "frames/730x730_1x1_30p/moon.8134.jpg",
-  //     media_type: "Image",
-  //     alt_text:
-  //       "An image of the moon, as it would appear on 2023-12-05 21:00:00+00:00. (Frame: 8134)",
-  //     width: 730,
-  //     height: 730,
-  //     pixels: 532900,
-  //   },
-  //   image_highres: {
-  //     id: 568985,
-  //     url: "https://svs.gsfc.nasa.gov/vis/a000000/a005000/a005048/frames/5760x3240_16x9_30p/fancy/comp.8134.tif",
-  //     filename: "frames/5760x3240_16x9_30p/fancy/comp.8134.tif",
-  //     media_type: "Image",
-  //     alt_text:
-  //       "An image of the moon, as it would appear on 2023-12-05 21:00:00+00:00. (Frame: 8134)",
-  //     width: 5760,
-  //     height: 3240,
-  //     pixels: 18662400,
-  //   },
-  //   su_image: {
-  //     id: 877058,
-  //     url: "https://svs.gsfc.nasa.gov/vis/a000000/a005000/a005049/frames/730x730_1x1_30p/moon.8134.jpg",
-  //     filename: "frames/730x730_1x1_30p/moon.8134.jpg",
-  //     media_type: "Image",
-  //     alt_text:
-  //       "An image of the moon, as it would appear on 2023-12-05 21:00:00+00:00. (Frame: 8134)",
-  //     width: 730,
-  //     height: 730,
-  //     pixels: 532900,
-  //   },
-  //   su_image_highres: {
-  //     id: 877059,
-  //     url: "https://svs.gsfc.nasa.gov/vis/a000000/a005000/a005049/frames/5760x3240_16x9_30p/fancy/comp.8134.tif",
-  //     filename: "frames/5760x3240_16x9_30p/fancy/comp.8134.tif",
-  //     media_type: "Image",
-  //     alt_text:
-  //       "An image of the moon, as it would appear on 2023-12-05 21:00:00+00:00. (Frame: 8134)",
-  //     width: 5760,
-  //     height: 3240,
-  //     pixels: 18662400,
-  //   },
-  //   time: "2023-12-05T21:00",
-  //   phase: 44.18,
-  //   obscuration: 0,
-  //   age: 22.481,
-  //   diameter: 1776.2,
-  //   distance: 403513,
-  //   j2000_ra: 11.4599,
-  //   j2000_dec: 6.5776,
-  //   subsolar_lon: -98.191,
-  //   subsolar_lat: -1.222,
-  //   subearth_lon: -1.416,
-  //   subearth_lat: -3.677,
-  //   posangle: 21.894,
-  // };
-
-  // * TODO: add north image
 
   const { days, hours, minutes } = convertAge(data?.age);
   return (
@@ -89,7 +28,7 @@ export default async function MoonPhases({ searchParams }) {
           </div>
         </div>
       </section>
-      <div className="relative h-full my-5 min-h-[388px] ">
+      <div className="relative h-full my-5 min-h-[388px]">
         <img
           src={data?.image?.url}
           alt={data?.image?.alt_text}

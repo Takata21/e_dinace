@@ -2,6 +2,7 @@
 import { useEphemerisStore } from "@/app/store/EphemerisStore";
 import { HorizonsTable } from "./HorizonsTable";
 import { EphemerisInfo } from "./EphemerisInfo";
+import { Loader } from "../Loader/Loader";
 
 export function HorizonsContent() {
   const { ephemeris, loading } = useEphemerisStore();
@@ -9,7 +10,7 @@ export function HorizonsContent() {
   return (
     <div>
       {loading ? (
-        <p>loader</p>
+        <Loader />
       ) : ephemeris === null ? (
         <div className="flex items-center justify-center h-[calc(100vh-80px)] flex-col">
           <img

@@ -10,8 +10,8 @@ export const MapWrapper = ({ handleMap, horizons }) => {
     <MapContainer
       center={[8.488, -80.328]}
       zoom={13}
-      // style={{ height: "500px", width: "100%" }}
-      className="h-full md:h-[500px] w-full"
+      style={{ height: "500px", width: "100%" }}
+      // className="h-full md:h-[500px] w-full"
       whenCreated={(map) => (mapRef.current = map)}
     >
       <TileLayer

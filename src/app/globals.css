@@ -33,6 +33,8 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+    --primary: #881e43;
+    --secondary: #881e43;
   }
 
   .dark {

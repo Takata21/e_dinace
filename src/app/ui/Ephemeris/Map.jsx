@@ -1,5 +1,6 @@
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogHeader,
@@ -34,6 +35,13 @@ export function Map({ handleMap, horizons }) {
               Haz clic y arrastra para moverte, y usa la rueda del mouse o gesto
               de pellizco. Confirma cuando estés listo. ¡Gracias!
             </DialogDescription>
+            <div className="flex justify-end ">
+              <DialogClose asChild className="mt-0 mb-0">
+                <button className="focus:outline-none text-white bg-[#0B602B] hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5  dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 my-5 w-max">
+                  Aceptar
+                </button>
+              </DialogClose>
+            </div>
           </DialogHeader>
           <div className="">
             <MapWrapper handleMap={handleMap} horizons={horizons} />
