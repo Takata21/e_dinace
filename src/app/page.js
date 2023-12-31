@@ -7,7 +7,7 @@ export default function Home() {
   const nextType1Eclipse = getNextEclipse(1);
   const nextType2Eclipse = getNextEclipse(2);
   return (
-    <div className="min-h-screen relative">
+    <div className="relative min-h-screen">
       <Slider />
       <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-6 my-5 g font-Space p-4">
         <MoonPhase />

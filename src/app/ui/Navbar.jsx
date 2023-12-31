@@ -9,7 +9,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between flex-1 w-full">
           <Link href="/" className="flex items-center">
             <img
-              src="images/dinace_logo.png"
+              src="/images/dinace_logo.png"
               className="h-16 my-1 mr-1"
               alt="dinace Logo"
             />
@@ -70,6 +70,14 @@ export default function Navbar() {
                 className="block text-[#0c163b] hover:text-[#0000006b] font-bold text-sm links-transitions dark:hover:text-[#fafafa93] dark:text-white"
               >
                 Fases de la Luna
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/planetas"
+                className="block text-[#0c163b] hover:text-[#0000006b] font-bold text-sm links-transitions dark:hover:text-[#fafafa93] dark:text-white"
+              >
+                Planetas
               </Link>
             </li>
             <li>

@@ -3,7 +3,7 @@ import Link from "next/link";
 export function Card({ galaxy }) {
   return (
     <Link
-      href={`/constelaciones/${galaxy.name.translation}`}
+      href={`/galaxias/${galaxy.name.translation.replace(/\s/g, "")}`}
       className="h-56 overflow-hidden rounded-sm group xl:flex-grow"
     >
       <div className="relative h-full font-semibold tracking-wider text-white uppercase font-Bellefair">

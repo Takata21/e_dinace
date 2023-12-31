@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 export function Card({ constellation }) {
+  console.log(constellation);
   return (
     <Link
       href={`/constelaciones/${constellation.name}`}
