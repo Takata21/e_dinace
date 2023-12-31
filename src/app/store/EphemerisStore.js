@@ -23,7 +23,7 @@ export const useEphemerisStore = create((set) => {
 
       const url = createEphemerisUrl(params);
 
-      console.log(url);
+      // console.log(url);
 
       const requestOptions = {
         method: "POST",
@@ -39,7 +39,7 @@ export const useEphemerisStore = create((set) => {
           throw new Error("La solicitud no se completó correctamente");
         }
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         set({ ephemeris: data, empty: false });
         return data;
       } catch (error) {
